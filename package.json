@@ -1,0 +1,19 @@
+{
+  "name": "projet3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/accueil.scss:./css/accueil.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naniskull/oc-ohmyfood.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naniskull/oc-ohmyfood/issues"
+  },
+  "homepage": "https://github.com/naniskull/oc-ohmyfood#readme"
+}

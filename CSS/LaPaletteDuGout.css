@@ -59,7 +59,7 @@ main{
     justify-content: space-between;
     font-family: 'Shrikhand';
     padding: 10px 30px 0 10px;
-    font-size: 10px;
+    font-size: 13px;
 }
 
 .title_section i{
@@ -77,8 +77,14 @@ section{
 .title_card{
     font-size: 17px;
     font-weight: 400;
-    color: rgba(80, 80, 80, 0.7);
+    color: rgba(0, 0, 0, 0.7);
     text-transform: uppercase;
+    padding-top: 20px;
+}
+
+.title_card span{
+    border-bottom: solid #99E2D0 3px;
+    padding-bottom: 5px;
 }
 
 .margin{
