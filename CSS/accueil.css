@@ -75,6 +75,7 @@ h2 {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
   transition: 0.3s;
   cursor: pointer;
+  background: linear-gradient(-5deg, #a87fdb, #ff9ee4);
 }
 
 .input_explorer {
@@ -184,8 +185,29 @@ h4 {
   font-size: 15px;
 }
 
-.card__body--price {
+.card__body--place {
   font-size: 14px;
+}
+
+.card__body--right i{
+  font-size: 30px;
+}
+
+.completed_heart{
+  opacity: 0;
+}
+
+.completed_heart:hover{
+  opacity: 1;
+}
+
+.empty_heart{
+  position: relative;
+  left: 43px;
+}
+
+.empty_heart:hover{
+  opacity: 0;
 }
 
 .card__body {

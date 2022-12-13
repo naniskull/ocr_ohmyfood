@@ -100,6 +100,11 @@ section{
     margin: 20px 0;
 }
 
+.card_menu:hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+    transition: 0.3s;  
+}
+
 .menu_title{
     color: black;
     padding: 15px 0 5px 10px;
@@ -168,4 +173,58 @@ a i{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+@media screen and (min-width: 767px) {
+
+    .header_img{
+        height: 450px;
+    }
+
+    section{
+        top: 0;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .layout_cards{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .layout_cards > * {
+        width: 32%;
+    }
+
+    /*.title_card{
+        display: flex;
+        justify-content: center;
+    }*/
+
+    .card_menu{
+        height: 70px;
+        overflow: hidden;
+    }
+    .margin{
+        padding-bottom: 50px;
+    }
+
+    .input_command{
+        top: -40px;
+    }
+
+    footer{
+        padding: 50px 5% 50px 5%;
+        display: flex;
+        align-items: center;
+      }
+    
+      .footer_link{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+      }
+    
+
 }
