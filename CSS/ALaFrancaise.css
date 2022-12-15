@@ -28,6 +28,9 @@ header{
 }
 
 .logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
     text-align: center;
     padding: 20px 0 15px 0;
 }
@@ -186,6 +189,10 @@ a i{
         height: 450px;
     }
 
+    header img {
+        width: 20%;
+      }
+    
     section{
         top: 0;
         padding-left: 5%;
