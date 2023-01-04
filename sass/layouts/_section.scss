@@ -1,0 +1,49 @@
+
+main{
+    background-color: rgb(245, 245, 245);
+}
+
+.title_section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Shrikhand';
+    padding: 10px 30px 0 10px;
+    font-size: 13px;
+}
+
+
+.title_section i{
+    font-size: 30px;
+    font-weight: lighter;
+    font-size: 25px;
+}
+
+section{
+    background-color: rgb(245, 245, 245);
+    border-radius: 40px 40px 0 0;
+    position: relative;
+    top: -50px;
+    @media screen and (min-width: 1024px) {
+        top: 0;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+.title_card{
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
+.title_card span{
+    border-bottom: solid #99E2D0 3px;
+    padding-bottom: 5px;
+}
+
+.margin{
+    margin: 0 10px;
+}

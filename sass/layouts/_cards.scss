@@ -1,0 +1,51 @@
+
+.card_menu{
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 17px;
+    margin: 20px 0;
+    @media screen and (min-width: 1024px) {
+        height: 70px;
+        overflow: hidden;
+    }
+}
+
+.card_menu:hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+    transition: 0.3s;  
+}
+
+.menu_title{
+    color: black;
+    padding: 15px 0 5px 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.info_price{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 10px 10px ;
+}
+
+.info{
+    color: rgba(80, 80, 80, 0.7);
+}
+
+.price{
+    color: black;
+    font-weight: 500;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .layout_cards{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .layout_cards > * {
+        width: 32%;
+    }
+
+}

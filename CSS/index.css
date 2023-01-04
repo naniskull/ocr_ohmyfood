@@ -7,20 +7,193 @@ a {
   text-decoration: none;
 }
 
-/****************** HEADER ********************/
-header img {
-  width: 50%;
+input {
+  width: 230px;
+  background: linear-gradient(-5deg, #9356DC, #FF79DA);
+  color: white;
+  border-radius: 30px;
+  border: none;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+}
+input:hover {
+  cursor: pointer;
+}
+input:hover::after {
+  opacity: 1;
+}
+input::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(5deg, ligten(#9356DC, 40) 0% white 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+}
+
+.btn {
+  text-align: center;
+  padding-top: 20px;
+}
+@media screen and (min-width: 1024px) {
+  .btn {
+    padding: 20px 0 35px 0;
+  }
+}
+
+/* cours ocr */
+/*$mint: #15dea5;
+$navy: #022F40;
+
+.opacity {
+margin:300px auto;
+display: flex;
+width: 75%;
+align-items: center !important;
+justify-content: center !important;
+font-style: italic !important;
+font-weight: 800 !important;
+color: white;
+font-family: 'Montserrat', sans-serif;
+
+  input {
+    border-radius: 25px;
+    background-color: $color-primary;
+    font-size: 45px !important;
+    padding: 30px 45px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    &:hover {
+      border-radius: 25px;
+        &::after {
+          border-radius: 25px;
+            opacity: 1;
+        }
+    }
+    &::after {
+      border-radius: 25px;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(-5deg, lighten($color-primary, 15) 0%, darken($color-secondary, 40) 100%);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+    }
+}
+}*/
+header {
+  display: flex;
+  align-items: center;
+}
+
+.back {
+  padding: 20px;
+  position: absolute;
+}
+
+.back a i {
+  color: black;
+  font-size: 20px;
 }
 
 .logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   text-align: center;
   padding: 20px 0 15px 0;
 }
 
-header {
-  top: 0px;
+/*** HEADER IMG ***/
+header img {
+  width: 50%;
+}
+@media screen and (min-width: 727px) {
+  header img {
+    width: 35%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header img {
+    width: 25%;
+  }
 }
 
+.header_img {
+  width: 100%;
+  height: 250px;
+  box-shadow: inset 0 8px 10px -10px rgba(0, 0, 0, 0.3);
+}
+@media screen and (min-width: 1024px) {
+  .header_img {
+    height: 450px;
+  }
+}
+
+.header_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer {
+  background-color: rgb(50, 50, 50);
+  color: white;
+  padding: 20px 0;
+}
+
+.footer_label {
+  font-family: "Shrikhand";
+  margin: 5px 20px;
+  padding: 10px 0;
+  font-size: larger;
+}
+
+.footer_link a {
+  color: white;
+  margin: 10px 20px;
+}
+.footer_link a:hover {
+  text-decoration: underline;
+}
+
+a i {
+  margin-right: 10px;
+}
+
+.footer_link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media screen and (min-width: 767px) {
+  footer {
+    padding: 50px 5% 50px 5%;
+    display: flex;
+    align-items: center;
+  }
+  .footer_link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .footer_link a {
+    margin: 5px;
+  }
+}
 /**** LOCATION ****/
 .location {
   background-color: rgb(228, 228, 228);
@@ -59,27 +232,6 @@ h2 {
   font-size: 17px;
   font-weight: 400;
   color: rgba(80, 80, 80, 0.7);
-}
-
-.explorer input {
-  width: 230px;
-  background: linear-gradient(-5deg, #9356DC, #FF79DA);
-  color: white;
-  border-radius: 30px;
-  border: none;
-  padding: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-}
-.explorer input:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
-  transition: 0.3s;
-  cursor: pointer;
-  background: linear-gradient(-5deg, #5100b4, #710051);
-}
-
-.input_explorer {
-  text-align: center;
-  padding: 20px;
 }
 
 /****************** NAV *********************/
@@ -219,14 +371,18 @@ h4 {
   align-items: center;
 }
 
+.layout_new a {
+  position: relative;
+}
+
 .new1 {
   padding: 5px 10px;
   background-color: rgb(182, 238, 182);
   color: green;
   border-radius: 3px;
   position: absolute;
-  right: 30px;
-  top: 930px;
+  right: 10px;
+  top: 10px;
 }
 
 .new2 {
@@ -235,8 +391,8 @@ h4 {
   color: green;
   border-radius: 3px;
   position: absolute;
-  right: 30px;
-  top: 1180px;
+  right: 10px;
+  top: 10px;
 }
 
 .card__restaurant {
@@ -255,46 +411,10 @@ h4 {
   border-radius: 20px 20px 0 0;
 }
 
-/************ FOOTER ************/
-footer {
-  background-color: rgb(50, 50, 50);
-  color: white;
-  padding: 20px 0;
-}
-
-.footer_label {
-  font-family: "Shrikhand";
-  margin: 5px 20px;
-  padding: 10px 0;
-  font-size: larger;
-}
-
-.footer_link a {
-  color: white;
-  margin: 10px 20px;
-}
-
-.footer_link a:hover {
-  text-decoration: underline;
-}
-
-a i {
-  margin-right: 10px;
-}
-
-.footer_link {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 @media screen and (min-width: 767px) {
   .nav_label {
     margin-left: 100px;
-    margin-bottom: 10px;
-  }
-  .nav_link {
-    margin: 0 100px 20px 100px;
+    margin-bottom: 45px;
   }
   h3 {
     margin-left: 100px;
@@ -302,19 +422,6 @@ a i {
   .cards {
     margin-left: 100px;
     margin-right: 100px;
-  }
-  header img {
-    width: 20%;
-  }
-  .nav_link {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    height: 130px;
-  }
-  .nav_link__text {
-    display: flex;
-    justify-content: center;
   }
   .layout_new {
     display: flex;
@@ -324,16 +431,8 @@ a i {
     display: flex;
     gap: 30px;
   }
-  .new1 {
-    top: 700px;
-    right: 610px;
-  }
-  .new2 {
-    top: 700px;
-    right: 110px;
-  }
   footer {
-    padding: 50px 100px 50px 100px;
+    padding: 50px 5% 50px 5%;
     display: flex;
     align-items: center;
   }
@@ -347,6 +446,23 @@ a i {
     margin: 5px;
   }
 }
-/*# sourceMappingURL=accueil.css.map */
+@media screen and (min-width: 1024px) {
+  .nav_label {
+    margin-bottom: 10px;
+  }
+  .nav_link {
+    margin: 0 100px 20px 100px;
+  }
+  .nav_link {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 130px;
+  }
+  .nav_link__text {
+    display: flex;
+    justify-content: center;
+  }
+}
 
-/*# sourceMappingURL=accueil.css.map */
+/*# sourceMappingURL=index.css.map */
