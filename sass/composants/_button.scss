@@ -1,7 +1,7 @@
 
   input {
     width: 230px;
-    background: linear-gradient(-5deg, $color-primary, #FF79DA);
+    background: linear-gradient($color-secondary, $color-primary);
     color: white;
     border-radius: 30px;
     border: none;
@@ -9,15 +9,18 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
     position: relative;
     z-index: 1;
+    transition: all 400ms;
 
       &:hover{
         cursor: pointer;
-        &::after {
+        opacity: 0.85;
+        scale: (1.05);
+        /*&::after {
           opacity: 1;
-        }
+        }*/
       }
 
-      &::after {
+      /*&::after {
         content: "";
         position: absolute;
         top: 0;
@@ -28,64 +31,63 @@
         opacity: 0;
         z-index: -1;
         transition: opacity 250ms;
-      }
+      }*/
   }
   
+
   
   .btn {
     text-align: center;
-    padding-top: 20px;
-    @media screen and (min-width: 1024px) {
-      padding: 20px 0 35px 0;
-  }
+    padding: 10px 0 30px 0;
 }
   
 
 
 
-/* cours ocr */
-
-/*$mint: #15dea5;
+/* COURS OCR */
+/*
+$mint: #15dea5;
 $navy: #022F40;
 
 .opacity {
-margin:300px auto;
-display: flex;
-width: 75%;
-align-items: center !important;
-justify-content: center !important;
-font-style: italic !important;
-font-weight: 800 !important;
-color: white;
-font-family: 'Montserrat', sans-serif;
+  margin:300px auto;
+  display: flex;
+  width: 75%;
+  align-items: center !important;
+  justify-content: center !important;
+  font-style: italic !important;
+  font-weight: 800 !important;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
 
-  input {
-    border-radius: 25px;
-    background-color: $color-primary;
-    font-size: 45px !important;
-    padding: 30px 45px;
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
-    &:hover {
+    .btn {
       border-radius: 25px;
-        &::after {
-          border-radius: 25px;
-            opacity: 1;
-        }
-    }
-    &::after {
-      border-radius: 25px;
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: linear-gradient(-5deg, lighten($color-primary, 15) 0%, darken($color-secondary, 40) 100%);
-        opacity: 0;
-        z-index: -1;
-        transition: opacity 250ms;
-    }
-}
-}*/
+      background-color: $mint;
+      font-size: 45px !important;
+      padding: 30px 45px;
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+      &:hover {
+        border-radius: 25px;
+          &::after {
+            border-radius: 25px;
+              opacity: 1;
+          }
+      }
+      &::after {
+        border-radius: 25px;
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: radial-gradient(circle, lighten($mint, 5) 0%, darken($mint, 10) 100%);
+          opacity: 0;
+          z-index: -1;
+          transition: opacity 250ms;
+      }
+  }
+  }
+*/
