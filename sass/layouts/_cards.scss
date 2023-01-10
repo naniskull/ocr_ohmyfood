@@ -1,4 +1,38 @@
 
+/********** ANIMATION APPARITION DES CARDS **********/
+
+@each $var in list {
+    
+}
+
+.card_menu {
+	animation: slide-in-bottom 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    @for $i from 1 through 4 {
+        &--#{$i} {
+            animation-delay: 250ms * $i;
+        }
+    }
+}
+
+@keyframes slide-in-bottom {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+
+/************** ANIMATION AU SURVOL DES CARDS **********/
+
+
+
+  /******* STYLE *******/
+
 .card_menu{
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
