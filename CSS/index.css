@@ -36,6 +36,7 @@ input:hover {
   cursor: pointer;
   opacity: 0.85;
   scale: 1.05;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
   /*&::after {
     opacity: 1;
   }*/
@@ -93,6 +94,26 @@ $navy: #022F40;
   }
   }
 */
+.heart i {
+  font-size: 35px;
+}
+
+.heart {
+  position: relative;
+}
+
+.completed_heart {
+  position: absolute;
+  right: 0px;
+  opacity: 0;
+}
+.completed_heart:hover {
+  cursor: pointer;
+  opacity: 1;
+  color: #FF79DA;
+  transition: 500ms;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -200,6 +221,7 @@ a i {
     margin: 5px;
   }
 }
+/************** LOADER SPINNER ***********/
 .slide-out-blurred-top {
   animation: slide-out-blurred-top 500ms cubic-bezier(0.755, 0.05, 0.855, 0.06) 3s both;
   position: relative;
@@ -351,7 +373,7 @@ body {
   animation: shadow 2s infinite;
 }
 
-/**** LOCATION ****/
+/********* LOCATION ********/
 .location {
   background-color: rgb(228, 228, 228);
   display: flex;
@@ -408,11 +430,10 @@ h2 {
   border-radius: 20px;
   background-color: rgb(245, 245, 245);
 }
-
 .nav_link a:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
   transition: 0.3s;
-  background-color: rgba(223, 196, 255, 0.5529411765);
+  background-color: #e4d5f6;
 }
 
 .nav_link {
@@ -504,23 +525,6 @@ h4 {
   font-size: 30px;
 }
 
-.completed_heart {
-  opacity: 0;
-}
-
-.completed_heart:hover {
-  opacity: 1;
-}
-
-.empty_heart {
-  position: relative;
-  left: 43px;
-}
-
-.empty_heart:hover {
-  opacity: 0;
-}
-
 .card__body {
   padding: 4% 5% 4% 3%;
   display: flex;
@@ -534,8 +538,8 @@ h4 {
 
 .new1 {
   padding: 5px 10px;
-  background-color: rgb(182, 238, 182);
-  color: green;
+  background-color: #99E2D0;
+  color: #1b6150;
   border-radius: 3px;
   position: absolute;
   right: 10px;
@@ -544,8 +548,8 @@ h4 {
 
 .new2 {
   padding: 5px 10px;
-  background-color: rgb(182, 238, 182);
-  color: green;
+  background-color: #99E2D0;
+  color: #1b6150;
   border-radius: 3px;
   position: absolute;
   right: 10px;

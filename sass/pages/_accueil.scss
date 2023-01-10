@@ -1,4 +1,4 @@
-
+/************** LOADER SPINNER ***********/
 
 .slide-out-blurred-top {
 	animation: slide-out-blurred-top 500ms cubic-bezier(0.755, 0.050, 0.855, 0.060) 3s both;
@@ -166,7 +166,8 @@ $color-shadow: lightgray;
 
 
 
-/**** LOCATION ****/
+/********* LOCATION ********/
+
 .location {
   background-color: rgb(228, 228, 228);
   display: flex;
@@ -223,12 +224,11 @@ h2 {
   padding: 20px 0;
   border-radius: 20px;
   background-color: rgb(245, 245, 245);
-}
-
-.nav_link a:hover{
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
-  transition: 0.3s;
-  background-color: #dfc4ff8d;
+  &:hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
+    background-color: lighten($color-primary, $amount: 30);
+  }
 }
 
 .nav_link {
@@ -321,22 +321,6 @@ h4 {
   font-size: 30px;
 }
 
-.completed_heart{
-  opacity: 0;
-}
-
-.completed_heart:hover{
-  opacity: 1;
-}
-
-.empty_heart{
-  position: relative;
-  left: 43px;
-}
-
-.empty_heart:hover{
-  opacity: 0;
-}
 
 .card__body {
   padding: 4% 5% 4% 3%;
@@ -351,8 +335,8 @@ h4 {
 
 .new1 {
   padding: 5px 10px;
-  background-color: rgb(182, 238, 182);
-  color: green;
+  background-color: $color-tertiary;
+  color: darken($color-tertiary, $amount: 50);
   border-radius: 3px;
   position: absolute;
   right: 10px;
@@ -361,8 +345,8 @@ h4 {
 
 .new2 {
   padding: 5px 10px;
-  background-color: rgb(182, 238, 182);
-  color: green;
+  background-color: $color-tertiary;
+  color: darken($color-tertiary, $amount: 50);
   border-radius: 3px;
   position: absolute;
   right: 10px;
