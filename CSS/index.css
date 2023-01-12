@@ -94,12 +94,12 @@ $navy: #022F40;
   }
   }
 */
-.heart i {
-  font-size: 35px;
-}
-
 .heart {
   position: relative;
+}
+
+.heart i {
+  font-size: 35px;
 }
 
 .completed_heart {

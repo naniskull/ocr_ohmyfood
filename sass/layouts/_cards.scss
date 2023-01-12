@@ -26,27 +26,6 @@
   }
 
 
-/************** ANIMATION AU SURVOL DES CARDS **********/
-
-.scale-in-hor-right {
-    width: 20px;
-    height: 20px;
-    background-color: $color-tertiary;
-	//animation: scale-in-hor-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@keyframes scale-in-hor-right {
-    0% {
-      transform: scaleX(0);
-      transform-origin: 100% 100%;
-      opacity: 1;
-    }
-    100% {
-      transform: scaleX(1);
-      transform-origin: 100% 100%;
-      opacity: 1;
-    }
-  }
 
 
   /*********** STYLE **************/
@@ -58,55 +37,82 @@
     margin: 20px 0;
     &:hover{
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
-        transition: 0.3s;  
-        &:hover + .scale-in-hor-right{
-            animation: scale-in-hor-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-        }
+        transition: 0.5s;
     }
-    @media screen and (min-width: 1024px) {
-        height: 70px;
-        overflow: hidden;
+    &:hover .confirmation__container{
+        margin: 0;
+        opacity: 1;
+        transition: 0.5s;
+    }
+    &:hover .confirmation__icon{
+        transform: rotate(0);
+        transition: 0.5s;
     }
 }
 
+.card_menu a{
+    display: flex;
+}
 
 .menu_title{
     color: black;
-    padding: 10px;
-    font-size: 20px;
+    padding: 15px 5px 15px 15px;
+    font-size: 17px;
     font-weight: 400;
-}
-
-.info_price{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px 10px 10px ;
+    flex: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .info{
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 300;
     color: lighten($color: black, $amount: 30);
+    padding-top: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .price{
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: 12px;
+    padding: 12px 12px 12px 0;
     color: black;
     font-weight: 500;
 }
 
-.card_menu a{
+/************** ANIMATION AU SURVOL DES CARDS **********/
+
+.confirmation__container {
+    width: 70px;
+    background-color: $color-tertiary;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 17px 17px 0;
+    margin: -30px;
+    opacity: 0;
+}
+
+
+.confirmation__icon {
+    color: white;
+    font-size: 30px;
+    transform: rotate(180deg);
 }
 
 
 
 
-@media screen and (min-width: 1024px) {
+
+
+  /****** MEDIA QUERIES *********/
+
+
+  @media screen and (min-width: 1024px) {
     .layout_cards{
         display: flex;
         justify-content: space-between;
@@ -114,6 +120,10 @@
     
     .layout_cards > * {
         width: 32%;
+    }
+
+    .info{
+        font-size: 13px;
     }
 
 }
