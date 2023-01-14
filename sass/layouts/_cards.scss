@@ -2,7 +2,7 @@
 /********** ANIMATION APPARITION DES CARDS **********/
 
 @each $var in list {
-    
+
 }
 
 .card_menu {
@@ -35,34 +35,53 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 17px;
     margin: 20px 0;
+    display: flex;
     &:hover{
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
-        transition: 0.5s;
+        transition: 0.6s;
+        cursor: pointer;
     }
     &:hover .confirmation__container{
-        margin: 0;
-        opacity: 1;
-        transition: 0.5s;
+        transform: scaleX(1) ; 
+        transition: 0.6s;
+        width: 70px;
+        animation: scale-up-hor-right 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        /* TEST */
+        //transform: scaleX(1);
+        //transform-origin: 100%; 
     }
     &:hover .confirmation__icon{
         transform: rotate(0);
-        transition: 0.5s;
+        transition: 0.6s;
+    }
+
+    &:hover .price{
+        transform: translateX(0);
+        transition: 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     }
 }
 
-.card_menu a{
+
+.container{
     display: flex;
+    flex: 1;
+    text-overflow: ellipsis;
+    overflow: hidden
 }
 
-.menu_title{
-    color: black;
+.container_info{
+    flex: 1;
     padding: 15px 5px 15px 15px;
     font-size: 17px;
     font-weight: 400;
-    flex: 1;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
+
+.title{
+    text-overflow: ellipsis;
+    overflow: hidden
 }
 
 .info{
@@ -79,22 +98,37 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: 12px 12px 12px 0;
-    color: black;
     font-weight: 500;
+    padding: 15px 15px 15px 0;
+    transform: translateX(0);
 }
 
 /************** ANIMATION AU SURVOL DES CARDS **********/
 
+@keyframes scale-up-hor-right {
+    0% {
+      transform: scaleX(0);
+      transform-origin: 100%;
+    }
+    100% {
+      transform: scaleX(1);
+      transform-origin: 100%;
+    }
+  }
+
+
 .confirmation__container {
-    width: 70px;
+    width: 1px;
     background-color: $color-tertiary;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0 17px 17px 0;
-    margin: -30px;
-    opacity: 0;
+    transform: scaleX(0) ; 
+    transition: 0.6s;
+    /* TEST */
+    //transform: scaleX(0);
+    //transform-origin: 100%;  
 }
 
 
@@ -103,7 +137,6 @@
     font-size: 30px;
     transform: rotate(180deg);
 }
-
 
 
 
