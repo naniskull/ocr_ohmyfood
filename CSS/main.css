@@ -23,7 +23,7 @@ input {
 input:hover {
   cursor: pointer;
   opacity: 0.85;
-  scale: 1.05;
+  scale: 1.1;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
 }
 
@@ -202,7 +202,6 @@ section {
 }
 .card_menu:hover .confirmation__container {
   transform: scaleX(1);
-  padding: 0 -5px !important;
   width: 70px;
   animation: scale-up-hor-right 0.6s ease-in-out alternate;
 }
@@ -226,6 +225,16 @@ section {
   overflow: hidden;
   white-space: nowrap;
 }
+@media screen and (min-width: 1024px) {
+  .container_info {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container_info {
+    font-size: 17px;
+  }
+}
 
 .title {
   text-overflow: ellipsis;
@@ -240,6 +249,16 @@ section {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+@media screen and (min-width: 1024px) {
+  .info {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .info {
+    font-size: 15px;
+  }
 }
 
 .price {
@@ -271,7 +290,6 @@ section {
 }
 .confirmation__container {
   width: 0;
-  padding: 0 -5px !important;
   background-color: #99E2D0;
   display: flex;
   align-items: center;
@@ -294,9 +312,6 @@ section {
   }
   .layout_cards > * {
     width: 32%;
-  }
-  .info {
-    font-size: 13px;
   }
 }
 footer {
