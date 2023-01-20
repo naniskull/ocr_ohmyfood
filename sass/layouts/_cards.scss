@@ -6,7 +6,7 @@
 }
 
 .card_menu {
-	animation: slide-in-bottom 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-in-bottom 1.5s both;
     @for $i from 1 through 4 {
         &--#{$i} {
             animation-delay: 250ms * $i;
@@ -36,6 +36,7 @@
     border-radius: 17px;
     margin: 20px 0;
     display: flex;
+    transition: 0.6s;
     &:hover{
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
         transition: 0.6s;
@@ -43,22 +44,15 @@
     }
     &:hover .confirmation__container{
         transform: scaleX(1) ; 
-        transition: 0.6s;
+        padding: 0 -5px !important;
         width: 70px;
-        animation: scale-up-hor-right 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-        /* TEST */
-        //transform: scaleX(1);
-        //transform-origin: 100%; 
-    }
-    &:hover .confirmation__icon{
-        transform: rotate(0);
-        transition: 0.6s;
+        animation: scale-up-hor-right 0.6s ease-in-out alternate;
     }
 
-    &:hover .price{
-        transform: translateX(0);
-        transition: 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    &:hover .confirmation__icon{
+        animation: rotate-icon 0.5s 0.1s alternate;
     }
+
 }
 
 
@@ -100,7 +94,6 @@
     align-items: flex-end;
     font-weight: 500;
     padding: 15px 15px 15px 0;
-    transform: translateX(0);
 }
 
 /************** ANIMATION AU SURVOL DES CARDS **********/
@@ -116,26 +109,32 @@
     }
   }
 
+  @keyframes rotate-icon {
+    0% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+
 
 .confirmation__container {
-    width: 1px;
+    width: 0;
+    padding: 0 -5px !important;
     background-color: $color-tertiary;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0 17px 17px 0;
     transform: scaleX(0) ; 
-    transition: 0.6s;
-    /* TEST */
-    //transform: scaleX(0);
-    //transform-origin: 100%;  
+    transition: 0.6s ease-in-out
 }
 
 
 .confirmation__icon {
     color: white;
     font-size: 30px;
-    transform: rotate(180deg);
 }
 
 

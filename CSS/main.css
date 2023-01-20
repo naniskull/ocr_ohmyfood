@@ -19,27 +19,12 @@ input {
   position: relative;
   z-index: 1;
   transition: all 400ms;
-  /*&::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(5deg, ligten($color-primary, 40) 0% lighten($color-secondary, 40) 100%);
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 250ms;
-  }*/
 }
 input:hover {
   cursor: pointer;
   opacity: 0.85;
   scale: 1.05;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
-  /*&::after {
-    opacity: 1;
-  }*/
 }
 
 .btn {
@@ -47,53 +32,6 @@ input:hover {
   padding: 10px 0 30px 0;
 }
 
-/* COURS OCR */
-/*
-$mint: #15dea5;
-$navy: #022F40;
-
-.opacity {
-  margin:300px auto;
-  display: flex;
-  width: 75%;
-  align-items: center !important;
-  justify-content: center !important;
-  font-style: italic !important;
-  font-weight: 800 !important;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-
-    .btn {
-      border-radius: 25px;
-      background-color: $mint;
-      font-size: 45px !important;
-      padding: 30px 45px;
-      position: relative;
-      z-index: 1;
-      cursor: pointer;
-      &:hover {
-        border-radius: 25px;
-          &::after {
-            border-radius: 25px;
-              opacity: 1;
-          }
-      }
-      &::after {
-        border-radius: 25px;
-          content: "";
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background: radial-gradient(circle, lighten($mint, 5) 0%, darken($mint, 10) 100%);
-          opacity: 0;
-          z-index: -1;
-          transition: opacity 250ms;
-      }
-  }
-  }
-*/
 .heart {
   position: relative;
 }
@@ -110,8 +48,12 @@ $navy: #022F40;
 .completed_heart:hover {
   cursor: pointer;
   opacity: 1;
-  color: #FF79DA;
   transition: 500ms;
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 header {
@@ -219,7 +161,7 @@ section {
 
 /********** ANIMATION APPARITION DES CARDS **********/
 .card_menu {
-  animation: slide-in-bottom 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-bottom 1.5s both;
 }
 .card_menu--1 {
   animation-delay: 250ms;
@@ -251,6 +193,7 @@ section {
   border-radius: 17px;
   margin: 20px 0;
   display: flex;
+  transition: 0.6s;
 }
 .card_menu:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
@@ -259,18 +202,12 @@ section {
 }
 .card_menu:hover .confirmation__container {
   transform: scaleX(1);
-  transition: 0.6s;
+  padding: 0 -5px !important;
   width: 70px;
-  animation: scale-up-hor-right 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  /* TEST */
+  animation: scale-up-hor-right 0.6s ease-in-out alternate;
 }
 .card_menu:hover .confirmation__icon {
-  transform: rotate(0);
-  transition: 0.6s;
-}
-.card_menu:hover .price {
-  transform: translateX(0);
-  transition: 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: rotate-icon 0.5s 0.1s alternate;
 }
 
 .container {
@@ -311,7 +248,6 @@ section {
   align-items: flex-end;
   font-weight: 500;
   padding: 15px 15px 15px 0;
-  transform: translateX(0);
 }
 
 /************** ANIMATION AU SURVOL DES CARDS **********/
@@ -325,22 +261,29 @@ section {
     transform-origin: 100%;
   }
 }
+@keyframes rotate-icon {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
 .confirmation__container {
-  width: 1px;
+  width: 0;
+  padding: 0 -5px !important;
   background-color: #99E2D0;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 0 17px 17px 0;
   transform: scaleX(0);
-  transition: 0.6s;
-  /* TEST */
+  transition: 0.6s ease-in-out;
 }
 
 .confirmation__icon {
   color: white;
   font-size: 30px;
-  transform: rotate(180deg);
 }
 
 /****** MEDIA QUERIES *********/
